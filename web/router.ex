@@ -17,7 +17,13 @@ defmodule T.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
+    get "/logout", SessionController, :delete
+
+    get "/signup", RegistrationController, :new
+    post "/signup", RegistrationController, :create
+
     resources "/users", UserController
     resources "/dishes", DishController
 
