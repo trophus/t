@@ -1,0 +1,38 @@
+<h2>Show dish</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @dish.name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @dish.description %>
+  </li>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @dish.price %>
+  </li>
+
+  <li>
+    <strong>Pic url:</strong>
+    <%= @dish.pic_url %>
+  </li>
+
+  <li>
+    <strong>Insta url:</strong>
+    <%= @dish.insta_url %>
+  </li>
+
+  <li>
+    <strong>Es:</strong>
+    <%= @dish.es_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: dish_path(@conn, :edit, @dish) %>
+<%= link "Back", to: dish_path(@conn, :index) %>

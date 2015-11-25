@@ -40,7 +40,10 @@ defmodule T.Mixfile do
       {:cowboy, "~> 1.0"},
 
       # additional dependencies for app functionality
-      {:passport, ""}
+      {:passport, "~> 0.0.3", [github: "arthurcolle/passport"]},
+      {:erlastic_search, github: "tsloughter/erlastic_search"},
+      {:hackney, "1.2.0", [optional: false, hex: :hackney, override: true]},
+      {:jsx, "~> 2.6.2", [optional: false, override: true]}
    ]
   end
 

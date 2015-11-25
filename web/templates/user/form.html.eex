@@ -1,0 +1,111 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :email, "Email", class: "control-label" %>
+    <%= text_input f, :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :name, "Name", class: "control-label" %>
+    <%= text_input f, :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :username, "Username", class: "control-label" %>
+    <%= text_input f, :username, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :latitude, "Latitude", class: "control-label" %>
+    <%= number_input f, :latitude, step: "any", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :longitude, "Longitude", class: "control-label" %>
+    <%= number_input f, :longitude, step: "any", class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :phone_number, "Phone number", class: "control-label" %>
+    <%= text_input f, :phone_number, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :home, "Home", class: "control-label" %>
+    <%= text_input f, :home, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :instagram_token, "Instagram token", class: "control-label" %>
+    <%= text_input f, :instagram_token, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :address_line_1, "Address line 1", class: "control-label" %>
+    <%= text_input f, :address_line_1, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :address_line_2, "Address line 2", class: "control-label" %>
+    <%= text_input f, :address_line_2, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :address_state, "Address state", class: "control-label" %>
+    <%= text_input f, :address_state, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :address_zip, "Address zip", class: "control-label" %>
+    <%= text_input f, :address_zip, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :customer_id, "Customer", class: "control-label" %>
+    <%= text_input f, :customer_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :publishable_key, "Publishable key", class: "control-label" %>
+    <%= text_input f, :publishable_key, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :secret_key, "Secret key", class: "control-label" %>
+    <%= text_input f, :secret_key, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :connect_id, "Connect", class: "control-label" %>
+    <%= text_input f, :connect_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :unread, "Unread", class: "control-label" %>
+    <%= number_input f, :unread, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :current_order, "Current order", class: "control-label" %>
+    <%= number_input f, :current_order, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :bio, "Bio", class: "control-label" %>
+    <%= text_input f, :bio, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

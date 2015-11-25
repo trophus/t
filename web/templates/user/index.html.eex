@@ -1,0 +1,62 @@
+<h2>Listing users</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Phone number</th>
+      <th>Home</th>
+      <th>Instagram token</th>
+      <th>Address line 1</th>
+      <th>Address line 2</th>
+      <th>Address state</th>
+      <th>Address zip</th>
+      <th>Customer</th>
+      <th>Publishable key</th>
+      <th>Secret key</th>
+      <th>Connect</th>
+      <th>Unread</th>
+      <th>Current order</th>
+      <th>Bio</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for user <- @users do %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.name %></td>
+      <td><%= user.username %></td>
+      <td><%= user.latitude %></td>
+      <td><%= user.longitude %></td>
+      <td><%= user.phone_number %></td>
+      <td><%= user.home %></td>
+      <td><%= user.instagram_token %></td>
+      <td><%= user.address_line_1 %></td>
+      <td><%= user.address_line_2 %></td>
+      <td><%= user.address_state %></td>
+      <td><%= user.address_zip %></td>
+      <td><%= user.customer_id %></td>
+      <td><%= user.publishable_key %></td>
+      <td><%= user.secret_key %></td>
+      <td><%= user.connect_id %></td>
+      <td><%= user.unread %></td>
+      <td><%= user.current_order %></td>
+      <td><%= user.bio %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: user_path(@conn, :delete, user), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New user", to: user_path(@conn, :new) %>
